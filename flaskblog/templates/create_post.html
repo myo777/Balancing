@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="contactus">
+    <h1 class="title">Survay Forms</h1>
+    <div class="application">
+        <div class="form_wrapper">
+    <form method="POST" action="">
+        <div class="pone">
+            {{ form.hidden_tag() }}
+        
+            <span>Mobile</span>
+            <div class="form_input">
+               
+                {% if form.title.errors %}
+                    {{ form.title(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.title.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            
+
+
+            <span>Content</span>
+            <div class="form_input">
+                {% if form.content.errors %}
+                    {{ form.content(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.content.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.content(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        
+        </div>
+        <div class="ptwo">
+            <div class="form_input">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </div>
+        
+
+            
+        
+    </form>
+    </div>
+</div>
+</div>
+{% endblock content %}

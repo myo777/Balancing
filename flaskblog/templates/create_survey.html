@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="contactus">
+    <h1 class="title">Survay Forms</h1>
+    <div class="application">
+        <div class="form_wrapper">
+    <form method="POST" action="">
+        <div class="pone">
+            {{ form.hidden_tag() }}
+        
+            <span>Contact Number</span>
+            <div class="form_input">
+               
+                {% if form.phone.errors %}
+                    {{ form.phone(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.phone.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.phone(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <span>Date Of Birth</span>
+            <div class="form_input">
+               
+                {% if form.dob.errors %}
+                    {{ form.dob(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.dob.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.dob(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            
+            <span>Education Background</span>
+            <div class="form_input">
+               
+                {% if form.education.errors %}
+                    {{ form.education(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.education.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.education(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <span>Relevant Skills</span>
+            <div class="form_input">
+                {% if form.skills.errors %}
+                    {{ form.skills(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.skills.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.skills(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+
+
+            
+
+
+            
+        
+        </div>
+        <div class="ptwo">
+
+            <span>When did you lost your Job ?</span>
+            <div class="form_input">
+               
+                {% if form.lost.errors %}
+                    {{ form.lost(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.lost.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.lost(class="form-control form-control-lg") }}
+                {% endif %}
+            </div> 
+
+            <span>How many times did you applied for job ?</span>
+            <div class="form_input">
+               
+                {% if form.applied.errors %}
+                    {{ form.applied(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.applied.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.applied(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <span>How many times did you get invitation for interview?</span>
+            <div class="form_input">
+               
+                {% if form.interview.errors %}
+                    {{ form.interview(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.interview.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.interview(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <span>Which function did you applied for?</span>
+            <div class="form_input">
+               
+                {% if form.function.errors %}
+                    {{ form.function(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.function.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.function(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <span>What is the reason for rejected?</span>
+            <div class="form_input">
+               
+                {% if form.reason.errors %}
+                    {{ form.reason(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.reason.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.reason(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+        
+            <div class="form_input">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </div>
+        
+
+            
+        
+    </form>
+    </div>
+</div>
+</div>
+{% endblock content %}

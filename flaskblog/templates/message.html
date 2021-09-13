@@ -1,0 +1,27 @@
+{% extends "home.html" %}
+{% block content %}
+
+<div class="contactus">
+    <div class="dashboard">
+    <h2>All messages</h2>
+
+        <table>
+
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            
+            
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.content }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock content %}

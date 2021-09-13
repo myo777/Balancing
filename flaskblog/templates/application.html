@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="contactus" id="contactus">
+    <h1 class="title">Application Forms</h1>
+    <div class="application">
+        
+        <div class="pone">
+            <div class="form_wrapper">
+                <label for="mobile">Mobile Number</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Mobile Number">
+                </div>
+
+                <label for="birthday">Date Of Birth</label>
+                <div class="form_input">
+                    <input type="date" id="birthday" name="birthday">
+                </div>
+
+                <label for="gender">Gender</label>
+                <div class="form_input">
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <label for="Visa">Visa Status</label>
+                <div class="form_input">
+                    <select name="visa" id="visa">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        
+                    </select>
+                </div>
+
+                <label for="education">Education</label>
+                <div class="form_input">
+                    <select name="education" id="education">
+                        <option value="bachelor">Bachelor Degree</option>
+                        <option value="master">Master Degree</option>
+                        <option value="collage">Some Collage</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <label for="experience">Experience</label>
+                <div class="form_input">
+                    <select name="experience" id="experience">
+                        <option value="1">1 - year</option>
+                        <option value="2">2 - year</option>
+                        <option value="3">3 - year</option>
+                        <option value="4">4 - year</option>
+                        <option value="5">5 - year</option>
+                        <option value="6">6 - year</option>
+                        <option value="7">7 - year</option>
+                        <option value="8">8 - year</option>
+                        <option value="9">9 - year</option>
+                        <option value="other">More</option>
+                    </select>
+                </div>
+                
+
+                <label for="soft_relevent_skill">Soft Relevent Skill</label>
+                <div class="form_input">
+                    <textarea placeholder="Domain Knowledge / Communication Skills / Creative / Passionate / Problem Solving"></textarea>
+                </div>
+                
+
+            </div>
+            
+        </div>
+        <div class="ptwo">
+            <div class="form_wrapper">
+                <label for="mobile">When Did You Lost Your Job ?</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <label for="mobile">How many jobs did you alredy appiled?</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <label for="mobile">How many times do you selected in the short list for interview ?</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <label for="mobile">How many times did you get invitation for interview ?</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <label for="mobile">Do you get a job after the interview ?</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <label for="mobile">Which function did you applied ?</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <label for="mobile">Reson Of rejected</label>
+                <div class="form_input">
+                    <input type="text" placeholder="Type here">
+                </div>
+
+                <div class="btn" id="btn">
+                    <a href="#">Submit</a>
+                </div>
+            </div>
+                
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}

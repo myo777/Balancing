@@ -1,0 +1,32 @@
+{% extends "home.html" %}
+{% block content %}
+
+<div class="contactus">
+
+
+    
+
+
+    <div class="dashboard">
+    <h2>All User</h2>
+    
+        <table>
+
+        <tr>
+            <th>User Image</th>
+            <th>User Name</th>
+            <th>Email</th>
+            
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td><img style="width: 100px; height: 100px; border-radius: 180px;" src="{{ url_for('static', filename='profile_pics/' + user.image_file) }}"></td>
+            <td><a class="article-title" href="#">{{ user.username }}</a></td>
+            <td>{{ user.email }}</td>
+            
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock content %}

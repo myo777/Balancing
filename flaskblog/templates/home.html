@@ -1,0 +1,61 @@
+  
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+
+    <div class="navbar">
+		<div class="logo">
+			<a href="#">Balancing The Scale</a>
+		</div>
+		<div class="navbar_items">
+			<ul>
+				
+                <li><a href="{{ url_for('home') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('all_users') }}">All Users</a></li>
+                <li><a href="{{ url_for('surveys') }}">Users Survey Details</a></li>
+				<li><a href="{{ url_for('message') }}">Contact Message</a></li>
+                <li><a href="{{ url_for('status') }}">User Status</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+		</div>
+	</div>
+    
+
+    {% block content %}
+    <div class="contactus">
+        <div class="dashboard">
+    <h1>Welcome Admin</h1>
+    </div>
+    </div>
+    {% endblock %}
+
+    <script type="text/javascript">
+        var tableToExcel = (function() {
+          var uri = 'data:application/vnd.ms-excel;base64,'
+            , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+            , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+            , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+          return function(table, name) {
+            if (!table.nodeType) table = document.getElementById(table)
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+            window.location.href = uri + base64(format(template, ctx))
+          }
+        })()
+        </script>
+   
+    
+</body>
+</html>

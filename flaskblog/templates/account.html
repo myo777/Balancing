@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="contactus">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ current_user.username }}</h2>
+          <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+      </div>
+      <div class="form_wrapper">
+
+      
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            
+                <legend class="border-bottom mb-4">Account Info</legend>
+                <div class="form_input">
+                   
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form_input">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form_input">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                        {% for error in form.picture.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            
+            <div class="form_input btnu">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <div class="form_input btna">
+                <a href="{{ url_for('new_survey') }}" class="btn">Application form</a>
+            </div>
+            
+        </form>
+        </div>
+    <div>
+        <h2>User Survey Details</h2>
+
+        <table class="table">
+            <thead>
+                <tr><th>User Name</th>
+                    <th>Contact Number</th>
+                    <th>Date Of Birth</th>
+                    <th>Date Of Lost Job</th>
+                    <th>Education background</th>
+                    <th>Relevant Skills</th>
+                    <th>Jobs Lost</th>
+                    <th>Applied Jobs</th>
+                    <th>Interview</th>
+                    <th>Function</th>
+                    <th>Reson Of Reject</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for survey in surveys %}
+                {% if survey.author == current_user %}
+                    <tr>
+                        <td>{{survey.author.username }}</td>
+                        <td>{{survey.phone }}</td>
+                        <td>{{survey.dob }}</td>
+                        <td>{{survey.lost }}</td>
+                        <td>{{survey.education}}</td>
+                        <td>{{survey.skills}}</td>
+                        <td>{{survey.lost}}</td>
+                        <td>{{survey.applied}}</td>
+                        <td>{{survey.interview}}</td>
+                        <td>{{survey.function}}</td>
+                        <td>{{survey.reason}}</td>
+                        
+                        
+                        <td> <form action="{{url_for('delete_survey', survey_id=survey.id) }}" method="POST">
+                            <input class="del" type="submit" value="Delete">
+                        </form></td>
+                    </tr>
+                    
+                
+                    {% endif %}
+                    {% endfor %}
+    
+            </tbody>
+        
+        
+        </table>
+    </div>
+    </div>
+{% endblock content %}
